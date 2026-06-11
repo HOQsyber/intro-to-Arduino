@@ -11,8 +11,6 @@
 <br/>
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-hoqsyber.github.io-00c8ff?style=for-the-badge&logoColor=white)](https://hoqsyber.github.io/intro-to-Arduino/)
-[![HTML](https://img.shields.io/badge/HTML5-Pure-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://hoqsyber.github.io/intro-to-Arduino/)
-[![CSS](https://img.shields.io/badge/CSS3-Animated-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://hoqsyber.github.io/intro-to-Arduino/)
 [![Arduino](https://img.shields.io/badge/Arduino-Compatible-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc)
 [![License](https://img.shields.io/badge/License-MIT-7b2fff?style=for-the-badge)](LICENSE)
 
