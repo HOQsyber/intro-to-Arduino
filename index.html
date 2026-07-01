@@ -507,6 +507,25 @@ p.body-text { font-size:.9rem; color:var(--text-dim); margin-bottom:.75rem; }
 .download-link-btn { display:inline-flex; align-items:center; gap:.6rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#000; font-weight:700; font-size:.9rem; padding:.75rem 1.6rem; border-radius:50px; text-decoration:none; transition:all .3s; box-shadow:0 4px 20px rgba(0,212,255,.3); }
 .download-link-btn:hover { transform:scale(1.05); }
 
+/* SUGGESTIONS */
+.suggest-card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:2rem; box-shadow:0 20px 50px rgba(0,0,0,.16); max-width:640px; margin:2rem auto 0; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+.form-group { margin-bottom:1rem; display:flex; flex-direction:column; gap:.4rem; }
+.form-group label { font-family:var(--mono); font-size:.72rem; letter-spacing:1px; color:var(--accent); text-transform:uppercase; }
+.form-group .optional-tag { color:var(--text-muted); text-transform:none; letter-spacing:0; font-family:var(--sans); }
+.form-input, .form-select, .form-textarea { width:100%; background:var(--surface2); border:1px solid var(--border); color:var(--text); border-radius:10px; padding:.75rem .95rem; font-size:.88rem; font-family:var(--sans); transition:border-color .2s,box-shadow .2s; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,212,255,.12); }
+.form-textarea { resize:vertical; min-height:120px; line-height:1.7; }
+.form-submit-btn { display:inline-flex; align-items:center; justify-content:center; gap:.6rem; width:100%; background:linear-gradient(135deg,var(--accent3),var(--accent)); color:#000; font-weight:700; font-size:.92rem; padding:.85rem 1.6rem; border:none; border-radius:50px; cursor:pointer; transition:all .3s; box-shadow:0 4px 20px rgba(16,185,129,.25); }
+.form-submit-btn:hover:not(:disabled) { transform:scale(1.02); }
+.form-submit-btn:disabled { opacity:.6; cursor:not-allowed; }
+.form-note { font-size:.75rem; color:var(--text-muted); text-align:center; margin-top:.9rem; }
+.form-status { display:none; margin-top:1rem; }
+.form-status.show { display:flex; }
+.suggest-card.sent form { display:none; }
+.suggest-card .form-status.status-success { border-color:rgba(16,185,129,.18); }
+.suggest-card .form-status.status-error { border-color:rgba(245,158,11,.25); background:rgba(245,158,11,.06); }
+
 @keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.15} }
 @keyframes bounce { 0%,100%{transform:rotate(-45deg) translateY(0)} 50%{transform:rotate(-45deg) translateY(6px)} }
@@ -552,6 +571,7 @@ p.body-text { font-size:.9rem; color:var(--text-dim); margin-bottom:.75rem; }
       <a href="#cheatsheet">Cheat Sheet</a>
       <a href="#troubleshoot">حل المشاكل</a>
       <a href="#after">بعد الورشة</a>
+      <a href="#suggestions">اقتراحات</a>
     </div>
   </div>
 
@@ -959,6 +979,60 @@ p.body-text { font-size:.9rem; color:var(--text-dim); margin-bottom:.75rem; }
   </div>
 </section>
 
+<div class="section-divider"><div class="divider-icon"><svg class="ico ico-md"><use href="#ic-pencil"/></svg></div></div>
+
+<!-- 08 SUGGESTIONS -->
+<section id="suggestions">
+  <div class="container">
+    <div class="section-label"><span class="sl-num">08</span>اقتراحات وملاحظات</div>
+    <h2 class="section-title">عندك اقتراح أو لاحظت خطأ؟</h2>
+    <p class="body-text">سواء اقتراح لتحسين الصفحة، خطأ لاحظته، أو سؤال ما عرفت له جواب — عبّي النموذج وبيوصلني مباشرة.</p>
+
+    <div class="suggest-card" id="suggestCard">
+      <form id="suggestForm" action="https://formspree.io/f/mbdvzbdz" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="s-name">الاسم <span class="optional-tag">(اختياري)</span></label>
+            <input class="form-input" type="text" id="s-name" name="name" placeholder="اسمك">
+          </div>
+          <div class="form-group">
+            <label for="s-email">إيميلك <span class="optional-tag">(اختياري، لو تبي رد)</span></label>
+            <input class="form-input" type="email" id="s-email" name="email" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="s-type">نوع الرسالة</label>
+          <select class="form-select" id="s-type" name="type">
+            <option value="اقتراح">💡 اقتراح لتحسين الصفحة</option>
+            <option value="خطأ">🐞 لاحظت خطأ أو مشكلة</option>
+            <option value="سؤال">❓ عندي سؤال</option>
+            <option value="إشادة">⭐ بس أبي أشكرك</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="s-message">تفاصيل الرسالة</label>
+          <textarea class="form-textarea" id="s-message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+        </div>
+        <button class="form-submit-btn" type="submit" id="suggestSubmitBtn">
+          <svg class="ico ico-sm"><use href="#ic-check"/></svg>
+          <span id="suggestSubmitLabel">إرسال</span>
+        </button>
+        <p class="form-note">بيوصلني على إيميلي مباشرة، ما راح ينشر أي مكان.</p>
+      </form>
+
+      <div class="callout callout-success form-status" id="suggestSuccess">
+        <div class="callout-icon-box"><svg class="ico ico-md"><use href="#ic-check"/></svg></div>
+        <div class="callout-body"><strong>وصلت رسالتك! 🎉</strong><p>شكراً لوقتك، بقرأها وراح أرد عليك لو حطيت إيميلك.</p></div>
+      </div>
+
+      <div class="callout callout-warn form-status" id="suggestError">
+        <div class="callout-icon-box"><svg class="ico ico-md"><use href="#ic-alert"/></svg></div>
+        <div class="callout-body"><strong>صار خطأ بالإرسال</strong><p>جرب مرة ثانية، أو راسلني مباشرة إذا استمرت المشكلة.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -1031,6 +1105,43 @@ function copyCode(btn) {
     }, 2000);
   });
 }
+
+// ── SUGGESTIONS FORM ──
+(function() {
+  const form = document.getElementById('suggestForm');
+  if (!form) return;
+  const btn = document.getElementById('suggestSubmitBtn');
+  const btnLabel = document.getElementById('suggestSubmitLabel');
+  const success = document.getElementById('suggestSuccess');
+  const error = document.getElementById('suggestError');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    error.classList.remove('show');
+    btn.disabled = true;
+    btnLabel.textContent = 'جاري الإرسال...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (res.ok) {
+        success.classList.add('show');
+        document.getElementById('suggestCard').classList.add('sent');
+      } else {
+        error.classList.add('show');
+        btn.disabled = false;
+        btnLabel.textContent = 'إرسال';
+      }
+    } catch (err) {
+      error.classList.add('show');
+      btn.disabled = false;
+      btnLabel.textContent = 'إرسال';
+    }
+  });
+})();
 
 // ── SCROLL ANIMATIONS ──
 const observer = new IntersectionObserver((entries) => {
