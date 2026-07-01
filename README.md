@@ -9,14 +9,11 @@
 ### صفحة تعليمية تفاعلية لورشة أردوينو — من الصفر إلى أول مشروع ذكي
 
 <br/>
-
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-hoqsyber.github.io-00c8ff?style=for-the-badge&logoColor=white)](https://hoqsyber.github.io/intro-to-Arduino/)
-[![Arduino](https://img.shields.io/badge/Arduino-Compatible-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc)
-[![License](https://img.shields.io/badge/License-MIT-7b2fff?style=for-the-badge)](LICENSE)
+<a href="https://hoqsyber.github.io/intro-to-Arduino"><img src="https://img.icons8.com/color/1200/domain--v1.jpg" height="32"/></a>
+<a href="https://www.arduino.cc"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="32"/></a>
 
 <br/>
 
-> **"كلما واجهت مشاكل أكثر، اكتسبت خبرة أكبر"** 💪
 
 </div>
 
@@ -24,12 +21,12 @@
 
 ## 📌 نظرة عامة
 
-هذه الصفحة هي **رفيقك الرقمي** خلال ورشة الأردوينو — مصممة بعناية لتكون مرجعاً شاملاً وتفاعلياً يأخذك من أول LED تُشغله حتى بناء نظام إنذار ذكي حقيقي.
+هذه الصفحة هي **رفيقك الرقمي** خلال تعلم الأردوينو — مصممة بعناية لتكون مرجعاً شاملاً وتفاعلياً.
 
 ```
 📦 intro-to-Arduino
- ┣ 📄 index.html       ← الصفحة التعليمية الكاملة
- ┗ 📄 README.md        ← أنت هنا
+ ┣ 📄 index.html     
+ ┗ 📄 README.md    
 ```
 
 ---
@@ -45,77 +42,6 @@
 | 05 | 📋 **Cheat Sheet** | جميع الأوامر الأساسية في مكان واحد |
 | 06 | 🛠️ **حل المشاكل** | أكثر 6 مشاكل شيوعاً وحلولها |
 | 07 | 🌟 **بعد الورشة** | أفكار مشاريع + موارد للتعلم |
-
----
-
-## 🔬 التمارين التطبيقية
-
-<table>
-<tr>
-<td width="50%">
-
-### 🟢 تمرين 01 — تشغيل LED
-**المستوى:** سهل
-
-تعلّم كيف تتحكم في نور بسيط — أساس كل شيء في الأردوينو.
-
-```cpp
-digitalWrite(ledPin, HIGH); // تشغيل
-delay(1000);
-digitalWrite(ledPin, LOW);  // إطفاء
-delay(1000);
-```
-
-</td>
-<td width="50%">
-
-### 🔵 تمرين 02 — تشغيل Buzzer
-**المستوى:** سهل
-
-نفس مبدأ الـ LED — لكن بالصوت هذي المرة!
-
-```cpp
-digitalWrite(buzzerPin, HIGH); // صوت
-delay(1000);
-digitalWrite(buzzerPin, LOW);  // صمت
-delay(1000);
-```
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🟡 تمرين 03 — حساس المسافة
-**المستوى:** متوسط
-
-اقرأ البيئة المحيطة باستخدام الموجات فوق الصوتية 📡
-
-```cpp
-duration = pulseIn(echoPin, HIGH);
-distance = duration * 0.034 / 2;
-Serial.println(distance);
-```
-
-</td>
-<td width="50%">
-
-### 🔴 تمرين 04 — نظام إنذار ذكي
-**المستوى:** مركّب 🏆
-
-دمج LED أحمر + أخضر + Buzzer + حساس مسافة في مشروع واحد متكامل!
-
-```cpp
-if (distance <= 15) {
-  // تنبيه! جسم قريب
-  digitalWrite(redLED, HIGH);
-  digitalWrite(buzzer, HIGH);
-}
-```
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -136,123 +62,36 @@ if (distance <= 15) {
 
 ## 🚀 كيفية التشغيل
 
-**الطريقة الأولى — مباشرة من المتصفح:**
+**مباشرة من المتصفح:**
 
 ```bash
 # افتح الرابط مباشرة
 https://hoqsyber.github.io/intro-to-Arduino/
 ```
-
-**الطريقة الثانية — تشغيل محلي:**
-
-```bash
-# 1. استنسخ المشروع
-git clone https://github.com/HOQsyber/intro-to-Arduino.git
-
-# 2. افتح المجلد
-cd intro-to-Arduino
-
-# 3. افتح الملف في المتصفح
-start index.html        # Windows
-open index.html         # Mac
-xdg-open index.html     # Linux
-```
-
-> لا يحتاج إلى خادم أو مكتبات خارجية — يعمل مباشرة في المتصفح ✅
-
 ---
 
 ## ✨ مميزات الصفحة
 
-- 🌙 **تصميم داكن** احترافي مريح للعين
+- 🌙 **أكثر من ثيم** احترافي مريح للعين
 - 📱 **متجاوب** — يعمل على الجوال والكمبيوتر
 - ⚡ **أكواد قابلة للنسخ** بنقرة واحدة
-- 🖼️ **صور حقيقية** لكل قطعة إلكترونية
+- 🖼️ **صور حقيقية** للقطع الإلكترونية
 - 🎯 **تحديات إضافية** في نهاية كل تمرين
 - 🛠️ **دليل حل المشاكل** للأخطاء الشائعة
 - 🔢 **شريط تقدم** يتتبع موضعك في الصفحة
-- ✨ **أنيميشن** عند التمرير لتجربة سلسة
+- ✨ **تفاعلي**
+- 💡 مشاريع مقترحة
+-  📚 موارد التعلم
 
 ---
 
-
----
-
-## 💡 مشاريع مقترحة بعد الورشة
-
-<table>
-<tr>
-<th>المستوى</th>
-<th>المشروع</th>
-<th>القطع المطلوبة</th>
-</tr>
-<tr>
-<td>🟢 مبتدئ</td>
-<td>إشارة مرور بـ 3 أنوار</td>
-<td>3x LED + أسلاك</td>
-</tr>
-<tr>
-<td>🟢 مبتدئ</td>
-<td>ميزان حرارة رقمي</td>
-<td>DHT11 + شاشة LCD</td>
-</tr>
-<tr>
-<td>🟡 متوسط</td>
-<td>نظام ري آلي للنباتات</td>
-<td>حساس رطوبة + مضخة</td>
-</tr>
-<tr>
-<td>🟡 متوسط</td>
-<td>مفتاح إضاءة بالتصفيق</td>
-<td>حساس صوت + ريلاي</td>
-</tr>
-<tr>
-<td>🔴 متقدم</td>
-<td>سيارة ذاتية التجنّب</td>
-<td>HC-SR04 + محركات + L298N</td>
-</tr>
-<tr>
-<td>🔴 متقدم</td>
-<td>منزل ذكي عبر الجوال</td>
-<td>ESP8266 + تطبيق</td>
-</tr>
-</table>
-
----
-
-## 📚 موارد التعلم
-
-**المواقع:**
-- 🌐 [arduino.cc](https://www.arduino.cc) — الموقع الرسمي
-- 🎮 [tinkercad.com](https://www.tinkercad.com) — محاكاة الدوائر
-- 📖 [randomnerdtutorials.com](https://randomnerdtutorials.com) — دروس شاملة
-
-**يوتيوب عربي:**
-- 📺 أكاديمية الأردوينو
-- 📺 Arduino بالعربي
-
-**يوتيوب إنجليزي:**
-- 📺 Paul McWhorter
-- 📺 DroneBot Workshop
-
----
-
-## 👨‍💻 صاحب المشروع
-
-<div align="center">
-
-**Hashim Omar Alqassab**
-
-[![GitHub](https://img.shields.io/badge/GitHub-HOQsyber-181717?style=for-the-badge&logo=github)](https://github.com/HOQsyber)
-
-*طالب علوم حاسب — جامعة الإمام عبدالرحمن بن فيصل*
+## 👨🏻‍💻 صاحب المشروع <a href="https://github.com/HOQsyber"><img src="https://cdn.simpleicons.org/github" height="32"/></a>
 
 </div>
 
----
-
 <div align="center">
+ كلما واجهت مشاكل أكثر، اكتسبت خبرة أكبر
 
-⭐ إذا أفادك المشروع، لا تنسَ تعطيه نجمة!
+⭐ إذا أفادك المشروع، لا تنسَ تعطيه نجمة! ⭐
 
 </div>
